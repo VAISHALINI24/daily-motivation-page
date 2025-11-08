@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daily Motivation</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+      transition: background 1s ease-in-out;
+    }
+
+    .container {
+      text-align: center;
+      color: white;
+      padding: 20px 40px;
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 2s ease;
+      max-width: 400px;
+    }
+
+    .quote {
+      font-size: 1.5rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="quote"></h1>
+  </div>
+
+  <script>
+    const quotes = [
+      "Believe you can and you're halfway there.",
+      "Push yourself, because no one else is going to do it for you.",
+      "Dream big. Work hard. Stay humble.",
+      "Don’t watch the clock; do what it does. Keep going.",
+      "You are stronger than you think.",
+      "The harder you work for something, the greater you’ll feel when you achieve it.",
+      "Stay positive, work hard, make it happen.",
+      "Doubt kills more dreams than failure ever will."
+    ];
+
+    const quote = document.querySelector('.quote');
+    const random = Math.floor(Math.random() * quotes.length);
+    quote.textContent = `"${quotes[random]}"`;
+  </script>
+</body>
+</html>
